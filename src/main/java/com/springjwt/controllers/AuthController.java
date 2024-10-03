@@ -84,6 +84,20 @@ public class AuthController {
                          roles));
   }
 
+  /**
+   * For posting, security feature/details in backend
+   * {
+   *     "username": "ychawla1316",
+   *     "email":"ey.gds15@gmail2.com",
+   *     "password":"Pass1234",
+   *     "role":[
+   *         "mod","admin"
+   *     ]
+   * }
+   * @param signUpRequest
+   * @return
+   */
+
   @PostMapping("/signup")
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
